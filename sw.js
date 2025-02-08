@@ -1,10 +1,10 @@
 const CACHE_NAME = "pwa-cache-v1";
 const urlsToCache = [
-  "/manifest",
-  "/manifest/index.html",
-  "/manifest/style.css",
-  "/manifest/script.js",
-  "/manifest/assets/icon-192x192.png",
+  "/maromba",
+  "/maromba/index.html",
+  "/maromba/style.css",
+  "/maromba/script.js",
+  "/maromba/assets/icon-192x192.png",
 ];
 
 self.addEventListener("install", (event) => {
