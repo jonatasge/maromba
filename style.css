@@ -1,0 +1,159 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.field {
+  margin: 8px 0;
+  width: 100%;
+}
+
+.field label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.field input, .field select {
+  border-radius: 6px;
+  padding: 8px 4px;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+#preview {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  width: 100%;
+}
+
+#preview-content {
+  column-gap: 32px;
+}
+
+#anilhas {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.anilha {
+  aspect-ratio: 1 / 1;
+  color: white;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.anilha::before {
+  aspect-ratio: 1 / 1;
+  background-color: #000;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  z-index: -2;
+}
+
+.anilha::after {
+  background-color: #fff;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 9%;
+  left: 50%;
+  margin: auto;
+  max-height: 0.35em;
+  max-width: 0.35em;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 9%;
+  z-index: -1;
+}
+
+.halter,
+.barra {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 0 4px;
+}
+
+.halter::before,
+.barra::before {
+  border-radius: 0.25em;
+  border: 2px solid black;
+  content: "";
+  display: block;
+  height: 0.45em;
+  left: 0;
+  position: absolute;
+  top: calc(50% + 1px);
+  transform: translate(0, -50%);
+  width: 100%;
+  z-index: -1;
+}
+
+.halter {
+  gap: 40px;
+  width: 140px;
+}
+
+.barra {
+  gap: 140px;
+  width: 300px;
+}
+
+.side {
+  align-items: center;
+  display: flex;
+}
+
+.side .anilha {
+  aspect-ratio: unset;
+  color: black;
+  display: block;
+}
+
+.side .anilha::before {
+  display: none;
+}
+
+.side .anilha::after {
+  background: black;
+  border-radius: 0.25em;
+  height: 100%;
+  max-height: none;
+  max-width: none;
+  position: relative;
+  width: 0.5em;
+}
+
+.side .anilha:not(:has(*)) {
+  transform: translateY(calc(-1em - 1px));
+}

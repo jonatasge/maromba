@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Maromba</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript">
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js").then(() => {
+          console.log("Service Worker registrado!");
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1 class="title">Combinar anilhas (4 de cada)</h1>
+
+    <div>
+      <div class="field">
+        <label for="weights">Anilhas</label>
+        <input
+          id="weights"
+          name="weights"
+          onchange="onWeightsChange(event)"
+          placeholder="1,2,3"
+          type="text"
+        />
+      </div>
+
+      <div class="field">
+        <label for="type">Tipo</label>
+        <select id="type" name="type" onchange="onTypeChange(event)">
+          <option value="">Selecione</option>
+          <option value="halter">Halter</option>
+          <option value="barra">Barra</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="load">Carga</label>
+        <select id="load" name="load" onchange="onLoadChange(event)"></select>
+      </div>
+
+      <div class="field">
+        <label for="combination">Combinação</label>
+        <select
+          id="combination"
+          name="combination"
+          onchange="onCombinationChange(event)"
+        ></select>
+      </div>
+    </div>
+
+    <div id="preview">
+      <div class="flex">
+        <h1 class="title" style="margin-bottom: 0">Anilhas</h1>
+
+        <div id="anilhas"></div>
+      </div>
+
+      <div id="preview-content" class="flex"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
