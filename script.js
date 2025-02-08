@@ -69,7 +69,8 @@ function onLoadChange(event) {
 }
 
 function onCombinationChange(event) {
-  const weights = event.target.value.split("+").map(Number);
+  state.combination = event.target.value
+  const weights = state.combination.split("+").map(Number);
   printPreview({ type: state.type, weights });
 }
 
@@ -167,9 +168,11 @@ window.onload = function () {
     Object.entries(storageState).forEach(
       ([key, value]) => (state[key] = value)
     );
-  }
 
-  ["weights", "type", "load", "combination"].forEach(
-    (id) => (document.getElementById(id).value = state[id])
-  );
+    ["weights", "type", "load", "combination"].forEach(
+      (id) => (document.getElementById(id).value = state[id])
+    );
+
+    printPreview({ type: state.type, weights: state.combination.split("+").map(Number) })
+  }
 };

@@ -4,14 +4,31 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 20px;
+}
+
 body {
   font-family: Arial, sans-serif;
+  padding: 8px;
 }
 
 .title {
   font-size: 1.5rem;
+  margin-bottom: 0.5rem;
   text-transform: capitalize;
   width: 100%;
+}
+
+.caption {
+  margin-top: 0;
+  font-size: 0.75rem;
 }
 
 .field {
@@ -25,7 +42,8 @@ body {
   width: 100%;
 }
 
-.field input, .field select {
+.field input,
+.field select {
   border-radius: 6px;
   padding: 8px 4px;
   width: 100%;
@@ -34,7 +52,7 @@ body {
 .flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 32px;
+  gap: 16px;
 }
 
 #preview {
